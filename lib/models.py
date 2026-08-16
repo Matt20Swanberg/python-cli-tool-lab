@@ -1,34 +1,34 @@
-# TODO: Define the Task class
-# Each task should store a title and a completed status (default False)
-# Add a complete() method that marks the task as completed and prints confirmation
+"""Models for the task manager CLI"""
 
 class Task:
+    """Represent an individual task"""
+
     def __init__(self, title):
-        # TODO: Assign the title
-        # TODO: Set completed to False
-        pass
+        """Initialize a new incomplete task"""
+        self.title = title
+        self.completed = False
 
     def complete(self):
-        # TODO: Mark the task as complete
-        # TODO: Print a confirmation message
-        pass
-
-# TODO: Define the User class
-# Each user has a name and a list of tasks
-# Add methods to add tasks and search tasks by title
+        """Mark the task as completed and display confirmation"""
+        self.completed = True
+        print(f"✅ Task '{self.title}' completed.")
 
 class User:
+    """Represent a user and their associated tasks"""
+
     def __init__(self, name):
-        # TODO: Store the user's name
-        # TODO: Initialize an empty list of tasks
-        pass
+        """Initialize a user with an empty task list"""
+        self.name = name
+        self.tasks = []
 
     def add_task(self, task):
-        # TODO: Add the task to the user's task list
-        # TODO: Print a message confirming the task was added
-        pass
+        """Add a task to the user's task list"""
+        self.tasks.append(task)
+        print(f"📌 Task '{task.title}' added to {self.name}.")
 
     def get_task_by_title(self, title):
-        # TODO: Search for a task by its title in the user's task list
-        # TODO: Return the matching task or None
-        pass
+        """Return the task matching the given title, or None if not found"""
+        for task in self.tasks:
+            if task.title == title:
+                return task
+        return None
