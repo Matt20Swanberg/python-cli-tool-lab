@@ -37,6 +37,5 @@ class User:
         for task in self.tasks:
             if task.title == title:
                 return task
-        return None
         # TODO: Return the matching task or None
-        pass
+        return None
