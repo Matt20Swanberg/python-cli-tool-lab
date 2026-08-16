@@ -173,7 +173,7 @@ Each command accepts a user and task title as positional arguments. The appropri
 
 The screenshot below shows the completed project and successful test results.
 
-![Test Suite Passed](/screenshots/screenshott.png)
+![Test Suite Passed](/screenshots/screenshot.png)
 
 ## Author
 
