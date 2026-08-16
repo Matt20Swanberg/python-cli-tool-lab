@@ -1,4 +1,4 @@
-# cli_tool.py
+"""Command-line interface for the task manager"""
 
 import argparse
 from .models import Task, User
@@ -6,28 +6,23 @@ from .models import Task, User
 # Global dictionary to store users and their tasks
 users = {}
 
-# TODO: Implement function to add a task for a user
 def add_task(args):
-    # - Check if the user exists, if not, create one
+    """Add a task to an existing or new user"""
     user = users.get(args.user) or User(args.user)
-    # - Create a new Task with the given title
     users[args.user] = user
+
     task = Task(args.title)
-    # - Add the task to the user's task list
     user.add_task(task)
 
-# TODO: Implement function to mark a task as complete
 def complete_task(args):
-    # - Look up the user by name
+    """Mark a user's task as complete"""
     user = users.get(args.user)
-    # - Look up the task by title
+
     if user:
         for task in user.tasks:
             if task.title == args.title:
-    # - Mark the task as complete
                 task.complete()
                 return
-    # - Print appropriate error messages if not found
         print("❌ Task not found.")
     else:
         print("❌ User not found.")
