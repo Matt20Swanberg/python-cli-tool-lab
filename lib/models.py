@@ -13,7 +13,7 @@ class Task:
         # TODO: Mark the task as complete
         self.completed = True
         # TODO: Print a confirmation message
-        print(f"Task: {self.title} completed")
+        print(f"✅ Task '{self.title}' completed.")
 
 # TODO: Define the User class
 # Each user has a name and a list of tasks
@@ -30,7 +30,7 @@ class User:
         # TODO: Add the task to the user's task list
         self.tasks.append(task)
         # TODO: Print a message confirming the task was added
-        print(f"Task: {task.title} added to {self.name}")
+        print(f"📌 Task '{task.title}' added to {self.name}.")
 
     def get_task_by_title(self, title):
         # TODO: Search for a task by its title in the user's task list
